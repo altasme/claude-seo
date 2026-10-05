@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Google API credential management for Claude SEO.
+Google API credential management for Alta SEO.
 
 Loads and validates credentials for Google Search Console, PageSpeed Insights,
 CrUX, Indexing API, and GA4. Supports service accounts, OAuth web credentials
@@ -851,7 +851,7 @@ ENVIRONMENT VARIABLE ALTERNATIVES:
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Google API credential management for Claude SEO"
+        description="Google API credential management for Alta SEO"
     )
     parser.add_argument(
         "--check",

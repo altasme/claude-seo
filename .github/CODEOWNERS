@@ -1,33 +1,33 @@
 # CODEOWNERS for claude-seo
 #
-# Every change to this repository routes review to @AgriciDaniel.
+# Every change to this repository routes review to @altasme.
 # Sections below let us call out security-critical paths so a future
 # co-maintainer cannot accidentally land a change without the right
 # eyes on it.
 
 # Default owner — every file unless overridden below.
-*                                   @AgriciDaniel
+*                                   @altasme
 
 # Security-critical: SSRF + DNS rebinding + credential handling.
-scripts/url_safety.py               @AgriciDaniel
-scripts/google_auth.py              @AgriciDaniel
-scripts/backlinks_auth.py           @AgriciDaniel
-scripts/render_page.py              @AgriciDaniel
-scripts/fetch_page.py               @AgriciDaniel
-scripts/capture_screenshot.py       @AgriciDaniel
-tests/test_url_safety.py            @AgriciDaniel
-SECURITY.md                         @AgriciDaniel
+scripts/url_safety.py               @altasme
+scripts/google_auth.py              @altasme
+scripts/backlinks_auth.py           @altasme
+scripts/render_page.py              @altasme
+scripts/fetch_page.py               @altasme
+scripts/capture_screenshot.py       @altasme
+tests/test_url_safety.py            @altasme
+SECURITY.md                         @altasme
 
 # Release + distribution: install scripts and version pinning are the
 # supply-chain surface.
-install.sh                          @AgriciDaniel
-install.ps1                         @AgriciDaniel
-.claude-plugin/plugin.json          @AgriciDaniel
-.claude-plugin/marketplace.json     @AgriciDaniel
-requirements.txt                    @AgriciDaniel
-pyproject.toml                      @AgriciDaniel
-CITATION.cff                        @AgriciDaniel
+install.sh                          @altasme
+install.ps1                         @altasme
+.claude-plugin/plugin.json          @altasme
+.claude-plugin/marketplace.json     @altasme
+requirements.txt                    @altasme
+pyproject.toml                      @altasme
+CITATION.cff                        @altasme
 
 # CI / governance.
-.github/                            @AgriciDaniel
-tests/test_manifest_consistency.py  @AgriciDaniel
+.github/                            @altasme
+tests/test_manifest_consistency.py  @altasme

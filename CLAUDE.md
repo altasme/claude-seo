@@ -1,8 +1,8 @@
-# Claude SEO: Universal SEO Analysis Skill
+# Alta SEO: Universal SEO Analysis Skill
 
 ## Project Overview
 
-This repository contains **Claude SEO**, a Tier 4 Claude Code skill for comprehensive
+This repository contains **Alta SEO**, a Tier 4 Claude Code skill for comprehensive
 SEO analysis across all industries. It follows the Agent Skills open standard and the
 3-layer architecture (directive, orchestration, execution). 26 sub-skills (22 core +
 1 orchestrator + 1 framework integration + 2 extension mirrors), 19 sub-agents (16 core +
@@ -51,17 +51,17 @@ claude-seo/
       SKILL.md
       references/                # API reference files (11 files)
     seo-backlinks/SKILL.md      # Backlink profile analysis
-    seo-cluster/                 # Semantic topic clustering (v1.9.0, by Lutfiya Miller)
+    seo-cluster/                 # Semantic topic clustering (v1.9.0)
       SKILL.md
       references/                # Clustering methodology, architecture, workflow
       templates/                 # cluster-map.html interactive visualization
-    seo-sxo/                     # Search Experience Optimization (v1.9.0, by Florian Schmitz)
+    seo-sxo/                     # Search Experience Optimization (v1.9.0)
       SKILL.md
       references/                # Page-type taxonomy, user stories, personas, wireframes
-    seo-drift/                   # SEO drift monitoring (v1.9.0, by Dan Colta)
+    seo-drift/                   # SEO drift monitoring (v1.9.0)
       SKILL.md
       references/                # Comparison rules (17 rules, 3 severity levels)
-    seo-ecommerce/               # E-commerce SEO (v1.9.0, by Matej Marjanovic)
+    seo-ecommerce/               # E-commerce SEO (v1.9.0)
       SKILL.md
       references/                # Marketplace API endpoints
     seo-dataforseo/SKILL.md     # Live SEO data via DataForSEO MCP (extension mirror)
@@ -238,8 +238,8 @@ claude-seo/
 ## Ecosystem
 
 Part of the Claude Code skill family:
-- [Claude Banana](https://github.com/AgriciDaniel/banana-claude) -- standalone image gen (bundled as extension here)
-- [Claude Blog](https://github.com/AgriciDaniel/claude-blog) -- companion blog engine, consumes SEO findings
+- the standalone image-generation skill -- standalone image gen (bundled as extension here)
+- [Claude Blog](https://github.com/example/blog-writer) -- companion blog engine, consumes SEO findings
 - [AI Marketing Claude](https://github.com/zubair-trabzada/ai-marketing-claude) -- community marketing suite (copy, emails, ads, funnels, CRO)
 
 ## Key Principles
@@ -258,7 +258,7 @@ GitHub fork of the other.
 
 | Remote | URL | Visibility | Role |
 |---|---|---|---|
-| `origin` | `https://github.com/AgriciDaniel/claude-seo` | **Public** | Published distribution. Users discover, clone, and install from here. `main` only reflects released history. |
+| `origin` | `https://github.com/altasme/claude-seo` | **Public** | Published distribution. Users discover, clone, and install from here. `main` only reflects released history. |
 | `aimh` | `https://github.com/AI-Marketing-Hub/claude-seo` | **Private** | Working repo inside the AI Marketing Hub org. Daily development. v2 branch + post-release work lives here before promotion to public. |
 
 ### Workflow
@@ -311,4 +311,4 @@ After cutting a new release (git tag + `gh release create`), run:
 /release-blog
 ```
 
-This generates a blog post on https://claude-seo.md/blog/, handles cover image generation, SEO metadata, FAQ schema, internal linking, sitemap/llms.txt updates, Vercel deployment, and Google indexing.
+This generates a blog post on https://example.com/blog/, handles cover image generation, SEO metadata, FAQ schema, internal linking, sitemap/llms.txt updates, Vercel deployment, and Google indexing.

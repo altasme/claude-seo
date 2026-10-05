@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Setup script for Claude Banana MCP server in Claude Code.
+Setup script for Image Gen MCP server in Claude Code.
 
 Configures @ycse/nanobanana-mcp in Claude Code's ~/.claude.json
 with the user's Google AI API key.
@@ -152,7 +152,7 @@ def main() -> None:
         api_key = os.environ.get("GOOGLE_AI_API_KEY")
 
     if not api_key:
-        print("Claude Banana - MCP Setup")
+        print("Image Gen - MCP Setup")
         print("=" * 40)
         print("\nGet your free API key at: https://aistudio.google.com/apikey")
         print()

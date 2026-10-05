@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Validate that the Claude Banana MCP server is properly configured.
+Validate that the Image Gen MCP server is properly configured.
 
 Checks:
 1. Claude Code ~/.claude.json has the MCP entry
@@ -34,7 +34,7 @@ def check(label: str, passed: bool, detail: str = "") -> bool:
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Validate the Claude Banana MCP server setup."
+        description="Validate the Image Gen MCP server setup."
     )
     return parser.parse_args()
 
@@ -42,7 +42,7 @@ def parse_args() -> argparse.Namespace:
 def main() -> int:
     parse_args()
 
-    print("Claude Banana - Setup Validation")
+    print("Image Gen - Setup Validation")
     print("=" * 40)
     results = []
 

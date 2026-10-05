@@ -1,25 +1,42 @@
-# Contributors
+# Notice
 
-Claude SEO is created and maintained by [@AgriciDaniel](https://github.com/AgriciDaniel).
+This product incorporates open-source software and content from third parties.
+The notices below are retained to satisfy the licenses that govern them.
 
-This project thrives thanks to community contributions from the
-[AI Marketing Hub](https://www.skool.com/ai-marketing-hub) Pro Hub Challenge
-and open-source pull requests.
+## Original software (MIT)
 
-## Pro Hub Challenge (v1.9.0)
+Portions of this software are derived from "Claude SEO", Copyright (c) 2026
+agricidaniel, distributed under the MIT License (see `LICENSE`). The MIT License
+requires that its copyright and permission notice be included in all copies or
+substantial portions of the software.
 
-The Pro Hub Challenge invited community members to build extensions for Claude SEO
+## FLOW framework and prompt library (CC BY 4.0)
+
+The `seo-flow` skill (`skills/seo-flow/`) bundles the FLOW framework document,
+bibliography and 41 prompts, (c) Daniel Agrici, licensed under
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Source:
+https://github.com/AgriciDaniel/flow. Content has been reformatted, with
+internal links rewritten, to fit this product.
+
+## Other third-party sources
+
+- AI-pattern catalogue used by `scripts/content_quality.py` and
+  `scripts/content_humanize.py`: Wikipedia "AI Cleanup" catalogue, CC BY-SA 4.0.
+- 24-pattern list in `scripts/content_humanize.py`: ivankuznetsov/claude-seo, MIT.
+
+## Community contributions (v1.9.0)
+
+The Pro Hub Challenge invited community members to build extensions for this project
 and Claude Blog. These submissions were reviewed, security-audited, and integrated
 into v1.9.0 with the contributors' permission.
 
 | Contributor | Submission | Repo | Integrated As |
 |------------|------------|------|--------------|
-| **Lutfiya Miller** (Winner) | Semantic Cluster Engine | [Drfiya/semantic-cluster-engine](https://github.com/Drfiya/semantic-cluster-engine) | `seo-cluster` (core skill) |
+| **Lutfiya Miller**  | Semantic Cluster Engine | [Drfiya/semantic-cluster-engine](https://github.com/Drfiya/semantic-cluster-engine) | `seo-cluster` (core skill) |
 | **Chris Muller** | Multi-lingual SEO | [Chriss54/claude-blog-multilingual](https://github.com/Chriss54/claude-blog-multilingual) | `seo-hreflang` enhancements (cultural profiles, locale formats, content parity) |
 | **Florian Schmitz** | SXO Skill | [tools-enerix/claude-sxo-skill](https://github.com/tools-enerix/claude-sxo-skill) | `seo-sxo` (core skill) |
 | **Dan Colta** | SEO Drift Monitor | [dancolta/seo-drift-monitor](https://github.com/dancolta/seo-drift-monitor) | `seo-drift` (core skill) |
 | **Matej Marjanovic** | E-commerce + DataForSEO Cost Config + ASO + Platform Support | [matej-marjanovic/claude-seo](https://github.com/matej-marjanovic/claude-seo) | `seo-ecommerce` (core), cost infrastructure, `seo-aso` (extension), `AGENTS.md` |
-| **Benjamin Samar** | SEO Dungeon | n/a | Reviewed (not integrated in v1.9.0) |
 
 ## Framework Integration (v1.9.5)
 
@@ -27,7 +44,6 @@ into v1.9.0 with the contributors' permission.
 |--------|------|---------|--------------|
 | **[FLOW](https://github.com/AgriciDaniel/flow)** by Daniel Agrici | 41 AI prompts + framework doc + bibliography | CC BY 4.0 | `seo-flow` skill + `skills/seo-flow/references/` |
 
-Attribution header on every bundled prompt file (automated by `scripts/sync_flow.py`).
 
 ## Community Pull Requests
 
@@ -115,12 +131,3 @@ Responsible disclosures incorporated into v2.2.0. Thank you for reporting privat
 | [@Fushuling](https://github.com/Fushuling) | [#110](https://github.com/AgriciDaniel/claude-seo/issues/110) | SSRF parser-differential bypass in `validate_url` |
 | [@webgunnz](https://github.com/webgunnz) | [#122](https://github.com/AgriciDaniel/claude-seo/issues/122), [#121](https://github.com/AgriciDaniel/claude-seo/issues/121) | Google API key leak in error output; UTF-8 double-encode |
 | [@fayerman-source](https://github.com/fayerman-source) | [#130](https://github.com/AgriciDaniel/claude-seo/issues/130), [#103](https://github.com/AgriciDaniel/claude-seo/issues/103) | GSC false "0 clicks" totals; NLP V1 entity metadata |
-
-## How to Contribute
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on submitting pull requests,
-creating extensions, and participating in future challenges.
-
-Join the community:
-- Free: https://www.skool.com/ai-marketing-hub
-- Pro: https://www.skool.com/ai-marketing-hub-pro

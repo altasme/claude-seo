@@ -10,8 +10,7 @@ user-invocable: true
 argument-hint: "baseline|compare|history <url>"
 license: MIT
 metadata:
-  author: AgriciDaniel
-  original_author: "Dan Colta (Pro Hub Challenge)"
+  author: Alta
   version: "2.4.2"
   category: seo
 ---

@@ -3,9 +3,9 @@
   "version": "0.3.3",
   "description": "Mods companion for claude-seo: a spend guard on paid SEO APIs, a live audit band with a receipt, an economy mode, a visual cockpit (Search Console, rankings, Core Web Vitals, audit, Maps, spend) and zero-token commands",
   "author": {
-    "name": "Agrici Daniel"
+    "name": "Alta"
   },
-  "homepage": "https://github.com/AgriciDaniel/claude-seo",
+  "homepage": "https://github.com/altasme/claude-seo",
   "license": "MIT",
   "userConfig": {
     "claudeSeoRoot": {
@@ -41,7 +41,7 @@
     "site": {
       "type": "string",
       "title": "Default site",
-      "description": "The site the cockpit opens on when the folder shows none: claude-seo.md, sc-domain:claude-seo.md or https://claude-seo.md/. A site chosen in a folder, or that folder's audit, still comes first.",
+      "description": "The site the cockpit opens on when the folder shows none: example.com, sc-domain:example.com or https://example.com/. A site chosen in a folder, or that folder's audit, still comes first.",
       "default": ""
     },
     "pageUrl": {

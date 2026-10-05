@@ -1,9 +1,9 @@
-# Firecrawl Extension Installer for Claude SEO (Windows)
+# Firecrawl Extension Installer for Alta SEO (Windows)
 $ErrorActionPreference = 'Stop'
 
 Write-Host "====================================" -ForegroundColor Cyan
 Write-Host "  Firecrawl Extension - Installer" -ForegroundColor Cyan
-Write-Host "  For Claude SEO" -ForegroundColor Cyan
+Write-Host "  For Alta SEO" -ForegroundColor Cyan
 Write-Host "====================================" -ForegroundColor Cyan
 Write-Host ""
 
@@ -16,11 +16,11 @@ $McpConfigFile = "$env:USERPROFILE\.claude.json"
 
 # Check prerequisites
 if (-not (Test-Path $SeoSkillDir)) {
-    Write-Host "x Claude SEO is not installed." -ForegroundColor Red
-    Write-Host "  Install it first: irm https://raw.githubusercontent.com/AgriciDaniel/claude-seo/main/install.ps1 | iex"
+    Write-Host "x Alta SEO is not installed." -ForegroundColor Red
+    Write-Host "  Install it first: irm https://raw.githubusercontent.com/altasme/claude-seo/main/install.ps1 | iex"
     exit 1
 }
-Write-Host "v Claude SEO detected" -ForegroundColor Green
+Write-Host "v Alta SEO detected" -ForegroundColor Green
 
 $nodeVersion = (node -v 2>$null) -replace 'v',''
 if (-not $nodeVersion) {

@@ -77,7 +77,7 @@ charts/
 *.pdf
 report.html
 generated-schema.json
-rankenstein-schema-audit.md
+example-schema-audit.md
 capture_closeups.py
 capture_desktop.py
 generate_charts.py

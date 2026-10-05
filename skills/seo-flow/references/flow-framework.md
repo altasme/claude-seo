@@ -1,4 +1,3 @@
-<!-- Source: github.com/AgriciDaniel/flow | License: CC BY 4.0 | Synced: 2026-04-26 -->
 ---
 title: "FLOW Framework"
 description: "FLOW Framework"
@@ -7,7 +6,7 @@ tags:
   - framework
 ---
 
-![Claude SEO 10-principle methodology: PERCEIVE, ANALYZE, VALIDATE, ACT](../../../assets/framework.svg)
+![Alta SEO 10-principle methodology: PERCEIVE, ANALYZE, VALIDATE, ACT](../../../assets/framework.svg)
 
 # FLOW Framework
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Claude SEO: Ahrefs extension installer.
+# Alta SEO: Ahrefs extension installer.
 #
 # Wires the official @ahrefs/mcp server into ~/.claude.json and
 # copies the seo-ahrefs mirror skill into ~/.claude/skills/.
@@ -15,7 +15,7 @@ main() {
     MCP_CONFIG_JSON="${HOME}/.claude.json"
 
     echo "════════════════════════════════════════"
-    echo "║   Claude SEO: Ahrefs extension       ║"
+    echo "║   Alta SEO: Ahrefs extension       ║"
     echo "════════════════════════════════════════"
 
     command -v python3 >/dev/null 2>&1 || {
@@ -27,7 +27,7 @@ main() {
 
     if [ ! -d "${SKILL_DIR}/seo" ]; then
         echo "✗ claude-seo base plugin not installed."
-        echo "  Install it first: curl -fsSL https://raw.githubusercontent.com/AgriciDaniel/claude-seo/main/install.sh | bash"
+        echo "  Install it first: curl -fsSL https://raw.githubusercontent.com/altasme/claude-seo/main/install.sh | bash"
         exit 1
     fi
 

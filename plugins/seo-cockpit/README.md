@@ -44,7 +44,7 @@ seo audit example.com: score 72/100  |  weakest Schema 40, Content 55  |  17 age
 **Visual cockpit** (`/seo-cockpit`). Opens on one Overview for the site this folder is about, with no setup:
 
 ```
-claude-seo.md  from this folder
+example.com  from this folder
 1: ● Audit     85/100 · weakest Schema 76
 2: ● Vitals    good · LCP 703ms · INP 48ms · CLS 0.00
 3: ○ Search    no Search Console access
@@ -61,7 +61,7 @@ r: Refresh  e: Export
 - **Missing data stays visible** as a dim line saying what to do, instead of an error screen.
 - **A row opens its detail** (Enter, a click, or its number): charts and tables for that source, `b` to go back.
 - **Keys** work while the pane has focus; otherwise the footer says `ctrl+x tab`. `r` refreshes everything, `e` exports HTML. Esc or Claude Code's own close mark closes the pane, and `/seo-cockpit` again toggles it.
-- **A status line** under the prompt keeps the summary in view: `SEO · claude-seo.md · audit 85/100 · CWV good`.
+- **A status line** under the prompt keeps the summary in view: `SEO · example.com · audit 85/100 · CWV good`.
 
 Charts are drawn with block characters in the terminal and as SVG on the desktop app. Every view names its source and when it was fetched.
 
@@ -76,12 +76,12 @@ Charts are drawn with block characters in the terminal and as SVG on the desktop
 ## Install
 
 ```bash
-/plugin marketplace add AgriciDaniel/claude-seo
-/plugin install claude-seo@agricidaniel-claude-seo
-/plugin install seo-cockpit@agricidaniel-claude-seo
+/plugin marketplace add altasme/claude-seo
+/plugin install claude-seo@alta-seo
+/plugin install seo-cockpit@alta-seo
 ```
 
-Auto-update is off by default for third-party marketplaces. Run `claude plugin update seo-cockpit@agricidaniel-claude-seo` to update.
+Auto-update is off by default for third-party marketplaces. Run `claude plugin update seo-cockpit@alta-seo` to update.
 
 ## Settings (`/config`)
 
@@ -92,7 +92,7 @@ Auto-update is off by default for third-party marketplaces. Run `claude plugin u
 | Spend guard | on | Turn off to let paid calls through unchecked |
 | Audit band | on | The live line above the prompt during an audit |
 | Economy mode | off | Run the five Opus agents on Sonnet |
-| Default site | empty | The site the cockpit opens on when a folder shows none (`claude-seo.md`, `sc-domain:claude-seo.md` or `https://claude-seo.md/`). A site chosen in a folder, or its audit, comes first |
+| Default site | empty | The site the cockpit opens on when a folder shows none (`example.com`, `sc-domain:example.com` or `https://example.com/`). A site chosen in a folder, or its audit, comes first |
 | Page for Core Web Vitals | empty | For the Vitals and drift views. Empty uses the property's site |
 | Audits folder | empty | Where you keep your `<site>-audit/` folders. The cockpit finds the shown site's audit there from any folder |
 | Google account | auto | `auto`: claude-seo's own order (its sign-in, a service account, then your gcloud account). `gcloud`: always your own account from `gcloud auth application-default login`, for properties you own |

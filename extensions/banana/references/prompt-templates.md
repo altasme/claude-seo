@@ -1,4 +1,4 @@
-# Proven Prompt Templates: Claude Banana
+# Proven Prompt Templates: Image Gen
 
 > Split from `prompt-engineering.md`. Load it when you need a ready-made template for a use case.
 

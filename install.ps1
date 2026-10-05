@@ -1,10 +1,10 @@
-# Claude SEO Installer for Windows
+# Alta SEO Installer for Windows
 # PowerShell installation script
 
 $ErrorActionPreference = "Stop"
 
 Write-Host "========================================" -ForegroundColor Cyan
-Write-Host "|   Claude SEO - Installer             |" -ForegroundColor Cyan
+Write-Host "|   Alta SEO - Installer             |" -ForegroundColor Cyan
 Write-Host "|   Claude Code SEO Skill              |" -ForegroundColor Cyan
 Write-Host "========================================" -ForegroundColor Cyan
 Write-Host ""
@@ -113,7 +113,7 @@ try {
 # Set paths
 $SkillDir = "$env:USERPROFILE\.claude\skills\seo"
 $AgentDir = "$env:USERPROFILE\.claude\agents"
-$RepoUrl = "https://github.com/AgriciDaniel/claude-seo"
+$RepoUrl = "https://github.com/altasme/claude-seo"
 # Pin to a specific release tag to prevent silent updates from main.
 # This default MUST be bumped on every release. CI guard
 # (tests/test_manifest_consistency.py) enforces this matches plugin.json.
@@ -133,7 +133,7 @@ if (Test-Path $TempDir) {
 $keepTemp = ($env:CLAUDE_SEO_KEEP_TEMP -eq '1')
 
 try {
-    Write-Host ">> Downloading Claude SEO ($RepoTag)..." -ForegroundColor Yellow
+    Write-Host ">> Downloading Alta SEO ($RepoTag)..." -ForegroundColor Yellow
     $clone = Invoke-External -Exe 'git' -Args @('clone','--depth','1','--branch',$RepoTag,$RepoUrl,$TempDir) -Quiet
     if ($clone.ExitCode -ne 0) {
         throw "git clone failed. Output:`n$($clone.Output -join "`n")"
@@ -349,7 +349,7 @@ try {
 }
 
 Write-Host ""
-Write-Host "[+] Claude SEO installed successfully!" -ForegroundColor Green
+Write-Host "[+] Alta SEO installed successfully!" -ForegroundColor Green
 Write-Host ""
 Write-Host "Usage:" -ForegroundColor Cyan
 Write-Host "  1. Start Claude Code:  claude"

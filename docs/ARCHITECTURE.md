@@ -2,7 +2,7 @@
 
 ## Overview
 
-Claude SEO follows Anthropic's official Claude Code skill specification with a modular, multi-skill architecture.
+Alta SEO follows Anthropic's official Claude Code skill specification with a modular, multi-skill architecture.
 
 ## Directory Structure
 
@@ -37,7 +37,7 @@ The plugin ships 26 sub-skills (22 core + 1 orchestrator + 1 framework integrati
 │   ├── seo-programmatic/       # Programmatic SEO at scale
 │   ├── seo-competitor-pages/   # Competitor comparison page generation
 │   ├── seo-google/             # Google SEO APIs (GSC, PSI, CrUX, GA4)
-│   ├── seo-flow/               # FLOW framework integration (CC BY 4.0)
+│   ├── seo-flow/               # FLOW framework integration 
 │   ├── seo-dataforseo/         # DataForSEO MCP mirror (extension surface)
 │   └── seo-image-gen/          # Banana MCP mirror (extension surface)
 │

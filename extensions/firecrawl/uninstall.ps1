@@ -1,4 +1,4 @@
-# Firecrawl Extension Uninstaller for Claude SEO (Windows)
+# Firecrawl Extension Uninstaller for Alta SEO (Windows)
 $ErrorActionPreference = 'Stop'
 
 Write-Host "Removing Firecrawl extension..." -ForegroundColor Yellow
@@ -34,4 +34,4 @@ if (Test-Path $McpConfigFile) {
 
 Write-Host ""
 Write-Host "v Firecrawl extension uninstalled." -ForegroundColor Green
-Write-Host "  Core Claude SEO skills are unchanged."
+Write-Host "  Core Alta SEO skills are unchanged."

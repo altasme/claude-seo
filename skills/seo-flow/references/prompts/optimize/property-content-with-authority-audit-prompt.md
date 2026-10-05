@@ -1,4 +1,3 @@
-<!-- Source: github.com/AgriciDaniel/flow | License: CC BY 4.0 | Synced: 2026-04-26 -->
 ---
 title: "Property content with authority audit prompt"
 description: "Property content with authority audit prompt"

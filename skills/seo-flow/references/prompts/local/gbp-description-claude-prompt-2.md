@@ -1,4 +1,3 @@
-<!-- Source: github.com/AgriciDaniel/flow | License: CC BY 4.0 | Synced: 2026-04-26 -->
 ---
 title: "GBP Description Claude Prompt 2"
 description: "GBP Description Claude Prompt 2"

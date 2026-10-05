@@ -2,7 +2,7 @@
 
 ## Data Handling
 
-Claude SEO is a Claude Code skill that runs on your local machine. The core skill makes no third-party API calls by default (audits still fetch the target URLs you point them at), and does not collect, store, or transmit any personal data to a vendor.
+Alta SEO is a Claude Code skill that runs on your local machine. The core skill makes no third-party API calls by default (audits still fetch the target URLs you point them at), and does not collect, store, or transmit any personal data to a vendor.
 
 ## What Stays Local
 

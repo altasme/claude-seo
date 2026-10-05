@@ -1,4 +1,4 @@
-# Claude SEO - Python Dependencies
+# Alta SEO - Python Dependencies
 # Bounded version pinning with security-conscious minimums
 # Last updated: September 23, 2026 (v2.4.0 floors)
 

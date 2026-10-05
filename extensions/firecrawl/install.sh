@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Firecrawl Extension Installer for Claude SEO
+# Firecrawl Extension Installer for Alta SEO
 # Wraps everything in main() to prevent partial execution on network failure
 
 main() {
@@ -15,17 +15,17 @@ main() {
 
     echo "════════════════════════════════════════"
     echo "║   Firecrawl Extension - Installer    ║"
-    echo "║   For Claude SEO                     ║"
+    echo "║   For Alta SEO                     ║"
     echo "════════════════════════════════════════"
     echo ""
 
     # Check prerequisites
     if [ ! -d "${SEO_SKILL_DIR}" ]; then
-        echo "x Claude SEO is not installed."
-        echo "  Install it first: curl -fsSL https://raw.githubusercontent.com/AgriciDaniel/claude-seo/main/install.sh | bash"
+        echo "x Alta SEO is not installed."
+        echo "  Install it first: curl -fsSL https://raw.githubusercontent.com/altasme/claude-seo/main/install.sh | bash"
         exit 1
     fi
-    echo "v Claude SEO detected"
+    echo "v Alta SEO detected"
 
     if ! command -v node >/dev/null 2>&1; then
         echo "x Node.js is required but not installed."

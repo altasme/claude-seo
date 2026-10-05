@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Claude SEO Installer
+# Alta SEO Installer
 # Wraps everything in main() to prevent partial execution on network failure
 
 main() {
     SKILL_DIR="${HOME}/.claude/skills/seo"
     AGENT_DIR="${HOME}/.claude/agents"
-    REPO_URL="https://github.com/AgriciDaniel/claude-seo"
+    REPO_URL="https://github.com/altasme/claude-seo"
     # Pin to a specific release tag to prevent silent updates from main.
     # This default MUST be bumped on every release. CI guard
     # (tests/test_manifest_consistency.py) enforces this matches plugin.json.
@@ -15,7 +15,7 @@ main() {
     REPO_TAG="${CLAUDE_SEO_TAG:-v2.4.2}"
 
     echo "════════════════════════════════════════"
-    echo "║   Claude SEO - Installer             ║"
+    echo "║   Alta SEO - Installer             ║"
     echo "║   Claude Code SEO Skill              ║"
     echo "════════════════════════════════════════"
     echo ""
@@ -33,7 +33,7 @@ main() {
     cleanup() { rm -rf -- "${TEMP_DIR}"; }
     trap cleanup EXIT
 
-    echo "↓ Downloading Claude SEO (${REPO_TAG})..."
+    echo "↓ Downloading Alta SEO (${REPO_TAG})..."
     git clone --depth 1 --branch "${REPO_TAG}" "${REPO_URL}" "${TEMP_DIR}/claude-seo" 2>/dev/null
 
     # Copy skill files
@@ -200,7 +200,7 @@ main() {
     fi
 
     echo ""
-    echo "✓ Claude SEO installed successfully!"
+    echo "✓ Alta SEO installed successfully!"
     echo ""
     echo "Usage:"
     echo "  1. Start Claude Code:  claude"

@@ -12,7 +12,7 @@ argument-hint: "[command] [query]"
 license: MIT
 compatibility: "Requires DataForSEO MCP server"
 metadata:
-  author: AgriciDaniel
+  author: Alta
   version: "2.4.2"
   category: seo
 ---

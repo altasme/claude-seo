@@ -6,10 +6,10 @@ import { command, worldOf } from './fixtures/world'
 const NARROW = { plugin: 'seo-cockpit', component: 'Pane' as const, requestId: 'seo-cockpit', viewport: { columns: 55, rows: 40 }, props: { title: 'SEO Cockpit', isFocused: true, bodyColumns: 53, placement: 'inline' as const, scroll: { offset: 0, bodyRows: 12 }, view: {} } }
 const WIDE = { ...NARROW, viewport: { columns: 160, rows: 50 }, props: { ...NARROW.props, bodyColumns: 110, placement: 'dock' as const, scroll: { offset: 0, bodyRows: 40 } } }
 
-const AUDIT = JSON.stringify({ summary: { health_score: 85 }, categories: [{ name: 'Schema', score: 76, findings: [] }, { name: 'Technical SEO', score: 94, findings: [] }], meta: { site: 'https://claude-seo.md' } })
+const AUDIT = JSON.stringify({ summary: { health_score: 85 }, categories: [{ name: 'Schema', score: 76, findings: [] }, { name: 'Technical SEO', score: 94, findings: [] }], meta: { site: 'https://example.com' } })
 
 /** The listing of a working folder holding one audit. */
-const LISTING = { '/work': [{ name: 'claude-seo.md-audit', kind: 'dir' as const }], '/work/claude-seo.md-audit': [{ name: 'audit-data.json', kind: 'file' as const }] }
+const LISTING = { '/work': [{ name: 'example.com-audit', kind: 'dir' as const }], '/work/example.com-audit': [{ name: 'audit-data.json', kind: 'file' as const }] }
 
 /** The rest of that folder: its files' contents, and the engine calls the pane makes. */
 function auditFolder(on: Parameters<typeof worldOf>[0]) {
@@ -24,7 +24,7 @@ function auditFolder(on: Parameters<typeof worldOf>[0]) {
 
 describe('cockpit', () => {
   test('/seo-cockpit opens on the Overview for the site this folder shows, with no setup', async ($, on) => {
-    worldOf(on, { listing: LISTING, scripts: { run: { exitCode: 3, stdout: '', stderr: 'Claude SEO runtime is not ready.' } } })
+    worldOf(on, { listing: LISTING, scripts: { run: { exitCode: 3, stdout: '', stderr: 'Alta SEO runtime is not ready.' } } })
     auditFolder(on)
 
     const opened: string[] = []
@@ -40,7 +40,7 @@ describe('cockpit', () => {
 
     expect(opened).toEqual(['seo-cockpit focused'])
     // The engine names the plugin itself; the reply is the outcome only.
-    expect(result.text).toBe('Cockpit open for claude-seo.md.')
+    expect(result.text).toBe('Cockpit open for example.com.')
 
     const ui = await $.ui.mount({ ...NARROW, surface: 'terminal' })
 
@@ -81,14 +81,14 @@ describe('cockpit', () => {
   test('in a folder with no audit, the last site used anywhere is shown, and can be changed', async ($, on) => {
     worldOf(on)
     on('session.cwd', () => ({ value: '/elsewhere' }))
-    on('store.get', ($, e) => ({ value: e.key === 'target:last' ? 'claude-seo.md' : undefined }))
+    on('store.get', ($, e) => ({ value: e.key === 'target:last' ? 'example.com' : undefined }))
     on('store.set', () => ({ value: undefined }))
     on('ui.status', () => ({ value: undefined }))
     on('ui.open', () => ({ value: { isPlaced: true } }) as never)
     on('ui.render', () => ({ type: 'Text', props: {}, children: ['engine'] }) as never)
     mock.clock(on)
 
-    expect((await $.command.run(command('seo-cockpit'))).text).toBe('Cockpit open for claude-seo.md.')
+    expect((await $.command.run(command('seo-cockpit'))).text).toBe('Cockpit open for example.com.')
 
     const ui = await $.ui.mount({ ...NARROW, surface: 'terminal' })
 
@@ -113,17 +113,17 @@ describe('cockpit', () => {
     on('ui.render', () => ({ type: 'Text', props: {}, children: ['engine'] }) as never)
     mock.clock(on)
 
-    expect((await $.command.run(command('seo-cockpit', 'claude-seo.md'))).text).toBe('Cockpit open for claude-seo.md.')
-    expect(saved['target:/elsewhere']).toBe('claude-seo.md')
-    expect(saved['target:last']).toBe('claude-seo.md')
+    expect((await $.command.run(command('seo-cockpit', 'example.com'))).text).toBe('Cockpit open for example.com.')
+    expect(saved['target:/elsewhere']).toBe('example.com')
+    expect(saved['target:last']).toBe('example.com')
     expect((await $.command.run(command('seo-cockpit', 'claude-ads.md'))).text).toBe('Cockpit switched to claude-ads.md.')
     expect((await $.command.run(command('seo-cockpit', 'not a site'))).text).toContain('is not a site')
   })
 
-  test('the default site opens from any folder, with its remembered audit', { options: { site: 'claude-seo.md' } }, async ($, on) => {
+  test('the default site opens from any folder, with its remembered audit', { options: { site: 'example.com' } }, async ($, on) => {
     worldOf(on)
     on('session.cwd', () => ({ value: '/anywhere' }))
-    on('store.get', ($, e) => ({ value: e.key === 'audit:claude-seo.md' ? '/work/claude-seo.md-audit/audit-data.json' : undefined }))
+    on('store.get', ($, e) => ({ value: e.key === 'audit:example.com' ? '/work/example.com-audit/audit-data.json' : undefined }))
     on('store.set', () => ({ value: undefined }))
     on('fs.read', ($, e) => (e.path.endsWith('audit-data.json') ? { value: AUDIT } : { deny: 'ENOENT' }))
     on('ui.status', () => ({ value: undefined }))
@@ -131,7 +131,7 @@ describe('cockpit', () => {
     on('ui.render', () => ({ type: 'Text', props: {}, children: ['engine'] }) as never)
     mock.clock(on)
 
-    expect((await $.command.run(command('seo-cockpit'))).text).toBe('Cockpit open for claude-seo.md.')
+    expect((await $.command.run(command('seo-cockpit'))).text).toBe('Cockpit open for example.com.')
 
     const ui = await $.ui.mount({ ...NARROW, surface: 'terminal' })
 
@@ -140,13 +140,13 @@ describe('cockpit', () => {
     expect(await ui.find({ key: 'row-audit' })).toBeDefined()
   })
 
-  test('a bare default site queries the sc-domain property, and the audits folder finds its audit', { options: { site: 'claude-seo.md', auditsFolder: '/audits' } }, async ($, on) => {
+  test('a bare default site queries the sc-domain property, and the audits folder finds its audit', { options: { site: 'example.com', auditsFolder: '/audits' } }, async ($, on) => {
     const world = worldOf(on, { scripts: { run: { stdout: { error: null, rows: [] } } } })
 
     on('session.cwd', () => ({ value: '/anywhere' }))
     on('store.get', () => ({ value: undefined }))
     on('store.set', () => ({ value: undefined }))
-    on('fs.read', ($, e) => (e.path === '/audits/claude-seo.md-audit/audit-data.json' ? { value: AUDIT } : { deny: 'ENOENT' }))
+    on('fs.read', ($, e) => (e.path === '/audits/example.com-audit/audit-data.json' ? { value: AUDIT } : { deny: 'ENOENT' }))
     on('ui.status', () => ({ value: undefined }))
     on('ui.open', () => ({ value: { isPlaced: true } }) as never)
     on('ui.render', () => ({ type: 'Text', props: {}, children: ['engine'] }) as never)
@@ -157,14 +157,14 @@ describe('cockpit', () => {
     const ui = await $.ui.mount({ ...WIDE, surface: 'terminal' })
 
     await ui.press({ key: 'refresh' })
-    // Search Console needs sc-domain:claude-seo.md; the bare name is not a property.
-    expect(world.runs.some(run => run.includes('--property sc-domain:claude-seo.md'))).toBe(true)
+    // Search Console needs sc-domain:example.com; the bare name is not a property.
+    expect(world.runs.some(run => run.includes('--property sc-domain:example.com'))).toBe(true)
     expect(world.runs.some(run => / --property claude-seo\.md/.test(run))).toBe(false)
     await ui.press({ key: 'row-audit' })
     expect(await ui.find({ type: 'Text', text: /85\/100/ })).toBeDefined()
   })
 
-  test('a site chosen in a folder beats the default', { options: { site: 'claude-seo.md' } }, async ($, on) => {
+  test('a site chosen in a folder beats the default', { options: { site: 'example.com' } }, async ($, on) => {
     worldOf(on)
     on('session.cwd', () => ({ value: '/client' }))
     on('store.get', ($, e) => ({ value: e.key === 'target:/client' ? 'client.example' : undefined }))
@@ -200,7 +200,7 @@ describe('cockpit', () => {
 
   test('a row opens its detail; charts are text in the terminal and SVG on the desktop', async ($, on) => {
     const day = (i: number) => new Date(Date.UTC(2026, 6, 3) + i * 86_400_000).toISOString().slice(0, 10)
-    const gsc = { property: 'sc-domain:claude-seo.md', error: null, rows: Array.from({ length: 60 }, (_, i) => ({ keys: [day(i)], date: day(i), query: 'q', clicks: i, impressions: 10 * i, ctr: 1, position: 5 })) }
+    const gsc = { property: 'sc-domain:example.com', error: null, rows: Array.from({ length: 60 }, (_, i) => ({ keys: [day(i)], date: day(i), query: 'q', clicks: i, impressions: 10 * i, ctr: 1, position: 5 })) }
 
     // runtime.py run <script> ...: the fixture keys on the subcommand, `run`.
     worldOf(on, { listing: LISTING, scripts: { run: { stdout: gsc } } })

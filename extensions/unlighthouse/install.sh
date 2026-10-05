@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Claude SEO: Unlighthouse extension installer.
+# Alta SEO: Unlighthouse extension installer.
 #
 # Wraps the existing scripts/unlighthouse_run.py into a discoverable
 # seo-unlighthouse skill. No API keys: Unlighthouse is fully local,
@@ -11,7 +11,7 @@ main() {
     SEO_SKILL_DIR="${SKILL_DIR}/seo"
 
     echo "════════════════════════════════════════"
-    echo "║   Claude SEO: Unlighthouse            ║"
+    echo "║   Alta SEO: Unlighthouse            ║"
     echo "════════════════════════════════════════"
 
     command -v python3 >/dev/null 2>&1 || { echo "✗ Python 3 required."; exit 1; }

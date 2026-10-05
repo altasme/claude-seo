@@ -11,7 +11,6 @@ Usage:
 Can also be imported as a library:
     from dataforseo_normalize import extract_items, normalize_merchant, truncate_for_context
 
-Original concept: Matej Marjanovic (Pro Hub Challenge)
 """
 
 import argparse

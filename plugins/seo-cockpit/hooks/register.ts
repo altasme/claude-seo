@@ -454,7 +454,7 @@ async function resolveHost($: EngineInterface, ctx: Ctx): Promise<void> {
 /**
  * The Search Console property for a site. A /config value counts only when it
  * is a real property (`sc-domain:` or a URL prefix) for that site; a bare name
- * such as `claude-seo.md` is not a property and becomes `sc-domain:claude-seo.md`.
+ * such as `example.com` is not a property and becomes `sc-domain:example.com`.
  */
 function propertyFor(setting: string, host: string): string {
   const value = setting.trim()
@@ -625,7 +625,7 @@ async function cockpitCommand($: EngineInterface, ctx: Ctx, args: string): Promi
       return { text: `Dashboard written to ${await exportHtml($, ctx, true)}` }
     }
 
-    // `/seo-cockpit claude-seo.md`: that site, remembered for this folder and as the last one used.
+    // `/seo-cockpit example.com`: that site, remembered for this folder and as the last one used.
     if (arg !== '') {
       if (hostOf(arg) === null) {
         return { text: `"${arg}" is not a site. Try /seo-cockpit example.com, or /seo-cockpit export.` }

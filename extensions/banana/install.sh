@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Banana Image Generation Extension Installer for Claude SEO
+# Banana Image Generation Extension Installer for Alta SEO
 # Wraps everything in main() to prevent partial execution on network failure
 
 main() {
@@ -15,17 +15,17 @@ main() {
 
     echo "════════════════════════════════════════"
     echo "║  Banana Image Gen - SEO Extension    ║"
-    echo "║  For Claude SEO                      ║"
+    echo "║  For Alta SEO                      ║"
     echo "════════════════════════════════════════"
     echo ""
 
     # Check prerequisites
     if [ ! -d "${SEO_SKILL_DIR}" ]; then
-        echo "✗ Claude SEO is not installed."
-        echo "  Install it first: curl -fsSL https://raw.githubusercontent.com/AgriciDaniel/claude-seo/main/install.sh | bash"
+        echo "✗ Alta SEO is not installed."
+        echo "  Install it first: curl -fsSL https://raw.githubusercontent.com/altasme/claude-seo/main/install.sh | bash"
         exit 1
     fi
-    echo "✓ Claude SEO detected"
+    echo "✓ Alta SEO detected"
 
     if ! command -v node >/dev/null 2>&1; then
         echo "✗ Node.js is required but not installed."

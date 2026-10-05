@@ -1,22 +1,22 @@
-# DataForSEO Extension Installer for Claude SEO (Windows)
+# DataForSEO Extension Installer for Alta SEO (Windows)
 # PowerShell installation script
 
 $ErrorActionPreference = "Stop"
 
 Write-Host "========================================" -ForegroundColor Cyan
 Write-Host "|   DataForSEO Extension - Installer   |" -ForegroundColor Cyan
-Write-Host "|   For Claude SEO                     |" -ForegroundColor Cyan
+Write-Host "|   For Alta SEO                     |" -ForegroundColor Cyan
 Write-Host "========================================" -ForegroundColor Cyan
 Write-Host ""
 
 # Check prerequisites
 $SeoSkillDir = "$env:USERPROFILE\.claude\skills\seo"
 if (-not (Test-Path $SeoSkillDir)) {
-    Write-Host "[X] Claude SEO is not installed." -ForegroundColor Red
-    Write-Host "  Install it first: irm https://raw.githubusercontent.com/AgriciDaniel/claude-seo/main/install.ps1 | iex"
+    Write-Host "[X] Alta SEO is not installed." -ForegroundColor Red
+    Write-Host "  Install it first: irm https://raw.githubusercontent.com/altasme/claude-seo/main/install.ps1 | iex"
     exit 1
 }
-Write-Host "[OK] Claude SEO detected" -ForegroundColor Green
+Write-Host "[OK] Alta SEO detected" -ForegroundColor Green
 
 $nodeCmd = Get-Command -Name node -ErrorAction SilentlyContinue
 if ($null -eq $nodeCmd) {

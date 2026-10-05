@@ -10,7 +10,7 @@ user-invocable: true
 argument-hint: "[audit|fix|lighthouse|refresh] [url]"
 license: MIT
 metadata:
-  author: AgriciDaniel
+  author: Alta
   version: "2.4.2"
   category: seo
 ---

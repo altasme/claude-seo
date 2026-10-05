@@ -1,4 +1,4 @@
-# Claude SEO: Multi-Platform Agent Instructions
+# Alta SEO: Multi-Platform Agent Instructions
 
 > For **Cursor**, **Cursor Cloud Agents**, **Google Antigravity**, **Gemini CLI**,
 > **Grok Build**,
@@ -54,7 +54,7 @@ in case a recipe needs a specific call.
 
 ## Overview
 
-Claude SEO is a Tier 4 SEO analysis skill with 26 sub-skills (22 core + 1 orchestrator +
+Alta SEO is a Tier 4 SEO analysis skill with 26 sub-skills (22 core + 1 orchestrator +
 1 framework integration + 2 extension mirrors), 19 sub-agents (16 core + 1 framework
 integration + 2 extension mirrors), and 60 Python execution scripts.
 
@@ -181,6 +181,6 @@ extensions/                # 9 MCP extensions: DataForSEO, Firecrawl, Banana, Ah
 
 ## Credits
 
-Created by [@AgriciDaniel](https://github.com/AgriciDaniel).
+Created by [@altasme](https://github.com/example).
 v1.9.0 community contributions by Lutfiya Miller, Chris Muller, Florian Schmitz,
 Dan Colta, and Matej Marjanovic. See [CONTRIBUTORS.md](CONTRIBUTORS.md).

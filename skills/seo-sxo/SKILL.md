@@ -8,8 +8,7 @@ user-invocable: true
 argument-hint: "<url> [keyword]"
 license: MIT
 metadata:
-  author: AgriciDaniel
-  original_author: "Florian Schmitz (Pro Hub Challenge)"
+  author: Alta
   version: "2.4.2"
   category: seo
 ---

@@ -122,9 +122,9 @@ describe('root', () => {
   })
 
   test('runtime.py gets claude-seo\'s own data folder, never the calling plugin\'s', () => {
-    expect(runtimeEnvOf('/home/u/.claude/plugins/cache/agricidaniel-claude-seo/claude-seo/2.4.1')).toEqual({
-      CLAUDE_PLUGIN_DATA: '/home/u/.claude/plugins/data/claude-seo-agricidaniel-claude-seo',
-      CLAUDE_PLUGIN_ROOT: '/home/u/.claude/plugins/cache/agricidaniel-claude-seo/claude-seo/2.4.1',
+    expect(runtimeEnvOf('/home/u/.claude/plugins/cache/alta-seo/claude-seo/2.4.1')).toEqual({
+      CLAUDE_PLUGIN_DATA: '/home/u/.claude/plugins/data/claude-seo-alta-seo',
+      CLAUDE_PLUGIN_ROOT: '/home/u/.claude/plugins/cache/alta-seo/claude-seo/2.4.1',
     })
     // A checkout: clear both, so runtime.py uses the checkout's own environment.
     expect(runtimeEnvOf('/home/u/Desktop/Skills/Public/claude-seo')).toEqual({ CLAUDE_PLUGIN_DATA: '', CLAUDE_PLUGIN_ROOT: '' })

@@ -1,4 +1,4 @@
-# Claude SEO - Ahrefs extension installer (Windows / PowerShell).
+# Alta SEO - Ahrefs extension installer (Windows / PowerShell).
 # Mirrors extensions/ahrefs/install.sh.
 [CmdletBinding()]
 param()

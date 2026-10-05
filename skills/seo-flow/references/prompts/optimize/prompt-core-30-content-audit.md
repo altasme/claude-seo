@@ -1,4 +1,3 @@
-<!-- Source: github.com/AgriciDaniel/flow | License: CC BY 4.0 | Synced: 2026-04-26 -->
 ---
 title: "Prompt: Core 30 Content Audit"
 description: "Prompt: Core 30 Content Audit"

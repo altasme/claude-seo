@@ -1,4 +1,4 @@
-# DataForSEO Extension Uninstaller for Claude SEO (Windows)
+# DataForSEO Extension Uninstaller for Alta SEO (Windows)
 
 $ErrorActionPreference = "Stop"
 

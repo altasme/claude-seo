@@ -8,8 +8,7 @@ user-invocable: true
 argument-hint: "<seed-keyword or url>"
 license: MIT
 metadata:
-  author: AgriciDaniel
-  original_author: "Lutfiya Miller (Pro Hub Challenge Winner)"
+  author: Alta
   version: "2.4.2"
   category: seo
 ---
@@ -31,7 +30,7 @@ interactive cluster map visualizations.
 |---------|-------------|
 | `/seo cluster plan <seed-keyword>` | Full planning workflow: expand, cluster, architect, visualize |
 | `/seo cluster plan --from strategy` | Import from existing `/seo plan` output |
-| `/seo cluster execute` | Execute plan: create content via claude-blog or output briefs |
+| `/seo cluster execute` | Execute plan: create content via blog-writer or output briefs |
 | `/seo cluster map` | Regenerate the interactive cluster visualization |
 
 ---
@@ -191,13 +190,13 @@ current directory. Run `/seo plan` first, or provide a seed keyword for fresh cl
 
 When `/seo cluster execute` is invoked:
 
-### Check for claude-blog
+### Check for blog-writer
 
 ```
 Test: Does ~/.claude/skills/blog/SKILL.md exist?
 ```
 
-**If claude-blog IS installed:**
+**If blog-writer IS installed:**
 
 1. Load `references/execution-workflow.md` for the full algorithm
 2. Read `cluster-plan.json` from the current directory
@@ -214,7 +213,7 @@ Test: Does ~/.claude/skills/blog/SKILL.md exist?
    and inject the new post's URL
 7. After all posts are written, generate the cluster scorecard
 
-**If claude-blog is NOT installed:**
+**If blog-writer is NOT installed:**
 
 1. Generate detailed content briefs for each post in the cluster plan
 2. Each brief includes:
@@ -226,7 +225,7 @@ Test: Does ~/.claude/skills/blog/SKILL.md exist?
    - Key points to cover
    - Competing pages to differentiate from
 3. Write briefs to `cluster-briefs/` directory as individual markdown files
-4. Inform user: "Install [claude-blog](https://github.com/AgriciDaniel/claude-blog)
+4. Inform user: "Install a blog-writing skill
    to auto-create content. Briefs saved to `cluster-briefs/`."
 
 ---
@@ -269,7 +268,7 @@ All outputs are written to the current working directory:
 | `cluster-plan.json` | Machine-readable cluster plan (full data) |
 | `cluster-plan.md` | Human-readable cluster plan summary |
 | `cluster-map.html` | Interactive SVG visualization |
-| `cluster-briefs/` | Content briefs (if no claude-blog) |
+| `cluster-briefs/` | Content briefs (if no blog-writer) |
 | `cluster-scorecard.md` | Post-execution quality report |
 
 ---
@@ -298,7 +297,7 @@ After cluster planning or execution completes, offer:
 | "SERP data unavailable" | WebSearch and DataForSEO both failing | Retry after 30s; if persistent, use intent-only clustering with warning |
 | "No strategy file found" | `--from strategy` but no plan exists | Prompt user to run `/seo plan` first |
 | "cluster-plan.json not found" | Execute without planning | Prompt user to run `/seo cluster plan` first |
-| "claude-blog not installed" | Execute attempted without blog skill | Generate content briefs instead; suggest installation |
+| "blog-writer not installed" | Execute attempted without blog skill | Generate content briefs instead; suggest installation |
 | "DataForSEO budget exceeded" | Cost check returned "blocked" | Fall back to WebSearch; inform user |
 | "Duplicate primary keywords" | Cannibalization detected | Merge affected posts or reassign keywords |
 | "Orphan page detected" | Post missing incoming links | Add links from nearest cluster siblings |

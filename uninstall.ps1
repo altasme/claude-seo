@@ -9,8 +9,8 @@
 # uninstaller.
 #
 # Plugin-install users should use Claude Code's own command instead:
-#   /plugin uninstall claude-seo@agricidaniel-claude-seo
-#   /plugin marketplace remove AgriciDaniel/claude-seo
+#   /plugin uninstall claude-seo@alta-seo
+#   /plugin marketplace remove altasme/claude-seo
 
 $ErrorActionPreference = "Stop"
 
@@ -56,7 +56,7 @@ function Main {
 
     Write-Host ""
     if ($removedSkills -eq 0 -and $removedAgents -eq 0) {
-        Write-Color Yellow "Nothing to remove. Claude SEO does not appear to be installed."
+        Write-Color Yellow "Nothing to remove. Alta SEO does not appear to be installed."
         Write-Color Yellow "If you installed via /plugin install, run /plugin uninstall instead."
         return
     }
