@@ -4,10 +4,7 @@ message: >-
   If you use this software, please cite it using the metadata from this file.
 type: software
 authors:
-  - alias: AgriciDaniel
-    given-names: Daniel
-    family-names: Agrici
-    website: 'https://agricidaniel.com'
+  - name: Alta
 repository-code: 'https://github.com/altasme/claude-seo'
 url: 'https://github.com/altasme/claude-seo'
 license: MIT

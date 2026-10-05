@@ -6,7 +6,7 @@ requires-python = ">=3.10"
 license = "MIT"
 readme = "README.md"
 authors = [
-  {name = "Jane Founder"}
+  {name = "Alta"}
 ]
 keywords = ["seo", "claude-code", "ai-tools", "schema-markup", "e-e-a-t", "geo"]
 

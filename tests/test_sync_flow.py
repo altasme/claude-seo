@@ -74,24 +74,10 @@ def test_real_sync_produces_prompts_per_stage():
     assert len(prompt_files) > 0, "Sync produced no prompt files"
 
 
-def test_synced_files_have_attribution_headers():
-    """Every synced prompt file must start with the CC BY 4.0 attribution comment."""
-    prompts_dir = REF_DIR / "prompts"
-    if not prompts_dir.exists():
-        return  # sync not yet run — skip silently
-
-    attribution_prefix = "<!-- Source: github.com/AgriciDaniel/flow"
-    failures = []
-    for md_file in prompts_dir.rglob("*.md"):
-        if md_file.name == "README.md":
-            continue
-        content = md_file.read_text(encoding="utf-8")
-        if not content.startswith(attribution_prefix):
-            failures.append(str(md_file.relative_to(REPO_ROOT)))
-
-    assert not failures, (
-        "Files missing attribution headers:\n" + "\n".join(failures)
-    )
+def test_synced_files_have_no_per_file_headers():
+    """Attribution lives in NOTICE.md, not in per-file headers."""
+    notice = (REPO_ROOT / "NOTICE.md").read_text(encoding="utf-8")
+    assert "CC BY 4.0" in notice
 
 
 # ── Task 1 tests ──────────────────────────────────────────────────────────────
@@ -243,13 +229,8 @@ def test_sha256_is_deterministic():
 
 # ── Task 5 tests ──────────────────────────────────────────────────────────────
 
-def test_prompts_readme_has_cc_attribution():
-    """references/prompts/README.md must contain the CC BY 4.0 attribution header (INFO-A14)."""
-    readme = REPO_ROOT / "skills" / "seo-flow" / "references" / "prompts" / "README.md"
-    content = readme.read_text(encoding="utf-8")
-    assert "CC BY 4.0" in content, (
-        "Missing CC BY 4.0 attribution in skills/seo-flow/references/prompts/README.md"
-    )
-    assert "github.com/AgriciDaniel/flow" in content, (
-        "Missing source URL in prompts README attribution"
-    )
+def test_notice_has_cc_attribution():
+    """NOTICE.md must carry the CC BY 4.0 attribution for the FLOW prompts."""
+    content = (REPO_ROOT / "NOTICE.md").read_text(encoding="utf-8")
+    assert "CC BY 4.0" in content
+    assert "github.com/AgriciDaniel/flow" in content

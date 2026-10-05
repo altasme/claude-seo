@@ -156,13 +156,6 @@ def list_markdown_files(path, ref, headers):
     return sorted(files, key=lambda item: item[1].lower())
 
 
-def attribution_header(today):
-    return (
-        "<!-- Source: github.com/AgriciDaniel/flow | License: CC BY 4.0 | "
-        f"Synced: {today} -->"
-    )
-
-
 def frontmatter_value(lines, key):
     if not lines or lines[0].strip() != "---":
         return ""
@@ -273,7 +266,6 @@ def record_write(root, path, content, dry_run, changes):
 def sync(args):
     root = script_root()
     refs = root / "skills" / "seo-flow" / "references"
-    today = datetime.date.today().isoformat()
     headers = _base_headers()
     changes = {"added": [], "updated": [], "unchanged": [], "hashes": {}}
     prompt_rows = []
@@ -281,7 +273,7 @@ def sync(args):
     for source, target in STATIC_FILES:
         print(f"fetch: {source}", file=sys.stderr)
         raw = fetch_file(source, args.ref, headers)
-        content = f"{attribution_header(today)}\n{raw}"
+        content = raw
         tpath = refs / target
         content = rewrite_flow_links(content, tpath, refs)
         record_write(root, tpath, content, args.dry_run, changes)
@@ -294,7 +286,7 @@ def sync(args):
             raw = fetch_file(source, args.ref, headers)
             prompt_rows.append(prompt_meta(stage, filename, raw))
             target = refs / "prompts" / stage / filename
-            content = f"{attribution_header(today)}\n{raw}"
+            content = raw
             content = rewrite_flow_links(content, target, refs)
             record_write(root, target, content, args.dry_run, changes)
 

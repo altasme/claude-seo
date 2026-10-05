@@ -65,16 +65,14 @@ install chromium`). No additional setup needed for either.
 - Shell: Use `set -euo pipefail` and quote all variables
 - Markdown: Keep lines under 120 characters where practical
 
-## Community Extensions (Pro Hub Challenge)
+## Community Extensions
 
-Alta SEO accepts community-built extensions through challenges and PRs.
-v1.9.0 integrated 5 challenge submissions and v1.9.7 added 9 community pull
-requests from 7 contributors. See [CONTRIBUTORS.md](CONTRIBUTORS.md) for the
-full credits.
+Alta SEO accepts community-built extensions through pull requests.
+See [NOTICE.md](NOTICE.md) for third-party notices.
 
 To submit a community extension:
 1. Build your skill/agent/script following the patterns in this repo
 2. Keep SKILL.md under 500 lines, references under 200 lines
 3. All URL-fetching scripts must route through `scripts/url_safety.py` — the canonical SSRF / DNS-rebinding layer (`validate_url()`, `safe_requests_session()`); never fetch a user-supplied URL without it. (`google_auth.py` is OAuth token lifecycle only — not an SSRF guard.)
 4. Include `original_author` in your SKILL.md frontmatter metadata
-5. Submit a PR or post in the [AI Marketing Hub](https://www.skool.com/ai-marketing-hub)
+5. Submit a PR
